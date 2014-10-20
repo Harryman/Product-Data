@@ -1,0 +1,43 @@
+<template name="Index">
+<div class="panel panel-default">
+	<div class="panel-heading">
+	<ul class="nav nav-pills">
+	<li>
+		<a href="{{pathFor 'index'}}">
+			<h3>Products:{{prodCount}}
+			</h3>
+		</a>
+	</li>
+	<li>
+		<a href="{{pathFor 'needs.review'}}">
+			<h3>Review needed:{{needsReviewCount}}</h3>
+		</a>
+		</li>
+		</ul>
+		</div>
+	<table class="table">
+		<th>Product Name</th>
+		<th>Old P#</th>
+		<th>tags</th>
+	  {{#each prodEntry}}
+  		<tr id="{{needsLookingAtClass}}">
+			<td class="link"><a href="{{pathFor 'product' params=this}}"><div class="qs">{{name}}</div></a></td>
+			<td>
+				<a href="/op/{{oldPart}}">
+					<div class=tag>{{oldPart}}</div>
+				</a>
+			</td>
+				<td>
+					{{#each tags}}
+					<a href="/t/{{this}}">
+						<div class="tag">
+							{{this}}
+						</div>
+					</a>
+					{{/each}}
+				</td>
+			</tr>
+	  {{/each}}
+	  </table>
+</div>
+</template>

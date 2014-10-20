@@ -1,3 +1,20 @@
 <template name="MasterLayout">
-  {{> yield}}
+	<nav class="navbar navbar-fixed-top navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header"><a href="{{pathFor 'index'}}"><h2>
+			Products</h2>
+			</a></div>
+		<form class="navbar-form barSpace" role="search" name="search">
+			<div class="form-group">
+				<input type="text" placeholder="Search all fields" class="form-control" name="searchForm" id="">
+				<button name="Search" class="btn btn-default">Search</button>
+				<button name="new" class="btn btn-default">New</button>
+			</div>
+		{{> loginButtons}}
+		</form>
+		</div>
+	</nav>
+	<div class="container">
+  	{{> yield}}
+  </div>
 </template>

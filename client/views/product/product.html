@@ -1,0 +1,64 @@
+<template name="Product">
+<div>
+		<form action="" role="form">
+			<label for="Part Number">Part #:<input type="text" name="pn" id="pn" disabled value="{{partNum}}"></label>
+			<div class="form-group">
+				<label for="name">Product Name</label><input type="text" id="name" value="{{name}}" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="oldPart">Old Part Number</label><input type="text" value="{{oldPart}}" id="oldPart" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="pubDesc">Public Product Description</label><textarea name="pubDesc" id="pubDesc" cols="125" rows="10">{{pubDesc}}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="interanlDesc">Internal Description(if different than puiblic)</label><textarea name="internalDesc" id="internalDesc" cols="125" rows="10">{{internalDesc}}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="manP">Manufacturer/distributor partnumber(comma separated if mulitple)</label><input type="text" value="{{manPn}}" id="manPn" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="orderingNotes">Notes for orderering product from suppliers</label><textarea name="orderingNotes" id="orderingNotes" cols="125" rows="10">{{orderingNotes}}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="notes">Notes &nbsp;</label><textarea name="notes" id="notes" cols="125" rows="10">{{notes}}</textarea>
+			</div>
+			<div class="form-group">
+				<label for="tags">Tags(seperate with comma)</label><input type="text" id="tags" value="{{tags}}" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="price">Price</label><input type="text" value="{{price}}" id="price" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="cost">Cost</label><input type="text" value="{{cost}}" id="cost" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="handling">Additional handling charges</label><input type="text" value="{{handling}}" id="handling" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="length">length</label><input type="text" value="{{length}}" id="length" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="width">width</label><input type="text" value="{{width}}" id="width" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="height">height</label><input type="text" value="{{height}}" id="height" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="inventory">Number in inventory</label><input type="text" value="{{inventory}}" id="inventory" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="isAssembly">This product is an assembly &nbsp; </label><input name="isAssembly" id="isAssembly"  type="checkbox" {{aCheck}} />
+			</div>
+			<div class="form-group">
+				<label for="isKit">This product is a kit &nbsp;</label><input name="isKit" id="isKit"  type="checkbox" {{kCheck}} />
+			</div>
+			<div class="form-group">
+				<label for="review">Requires Review &nbsp; </label><input name="review" id="review"  type="checkbox" {{rCheck}} />
+			</div>
+		</form>
+		<button class="btn btn-success" id="save">Save</button>
+		<button class="btn btn-danger" id="delete">Delete</button>
+</div>
+</template>
