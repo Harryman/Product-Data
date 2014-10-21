@@ -76,7 +76,78 @@ Template.Product.events({
   },
   'click #delete': function(e,tmpl){
     e.preventDefault();
-    Faq.remove({_id:tmpl.data._id});
+    Product.remove({_id:tmpl.data._id});
+    Router.go('index');
+  },
+  'click #saveNew': function(e,tmpl){
+    e.preventDefault();
+    var prodData = tmpl.data;
+    var pn = $(tmpl.find('#pn')).val();
+    var name = $(tmpl.find('#name')).val();
+    var oldPartString = $(tmpl.find('#oldPart')).val();
+    var oldPart = [];
+    var pubDesc = $(tmpl.find('#pubDesc')).val();
+    var internalDesc = $(tmpl.find('#internalDesc')).val();
+    var manPnString = $(tmpl.find('#manPn')).val();
+    var manPn = [];
+    var orderingNotes = $(tmpl.find('#orderingNotes')).val();
+    var notes = $(tmpl.find('#notes')).val();
+    var tagString = $(tmpl.find('#tags')).val();
+    var tags = [];
+    var price = $(tmpl.find('#price')).val();
+    var cost = $(tmpl.find('#cost')).val();
+    var handling = $(tmpl.find('#handling')).val();
+    var length = $(tmpl.find('#length')).val();
+    var width = $(tmpl.find('#width')).val();
+    var height = $(tmpl.find('#height')).val();
+    var weight = $(tmpl.find('#weight')).val();
+    var inventory = $(tmpl.find('#inventory')).val();
+    var isAssembly = $(tmpl.find('#isAssembly')).is(':checked');
+    var isKit = $(tmpl.find('#isKit')).is(':checked');
+    var needsReview = $(tmpl.find('#review')).is(':checked');
+    var modified = new Date;
+    $.each(oldPartString.split(","), function(){
+      if(this != ""){
+        oldPart.push($.trim(this));
+      }
+    });
+    $.each(tagString.split(","), function(){
+      if(this != ""){
+        tags.push($.trim(this));
+      }
+    });
+    $.each(manPnString.split(","), function(){
+      if(this != ""){
+        manPn.push($.trim(this));
+      }
+    });
+    Product.insert({        
+      pn:pn,
+      name:name,
+      oldPart:oldPart,
+      pubDesc:pubDesc,
+      internalDesc:internalDesc,
+      manPn:manPn,
+      orderingNotes:orderingNotes,
+      notes:notes,
+      tags:tags,
+      price:price,
+      cost:cost,
+      handling:handling,
+      length:length,
+      width:width,
+      height:height,
+      weight:weight,
+      inventory:inventory,
+      isAssembly:isAssembly,
+      isKit:isKit,
+      needsReview:needsReview,
+      modified:modified,
+      changeLog:{
+        who:Meteor.user()._id,
+        when:modified
+      }
+    });
     Router.go('index');
   }
 });

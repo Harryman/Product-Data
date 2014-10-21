@@ -42,7 +42,7 @@
 				<label for="height">height</label><input type="text" value="{{height}}" id="height" class="form-control">
 			</div>
 			<div class="form-group">
-				<label for="weight">weight</label><input type="text" value="{{weight}}" placeholder="1.380" id="weight" class="form-control">
+				<label for="weight">weight</label><input type="text" value="{{weight}}" placeholder="1.380" cd id="weight" class="form-control">
 			</div>
 			<div class="form-group">
 				<label for="tags">Tags(seperate with comma)</label><input type="text" id="tags" value="{{tags}}" class="form-control">
@@ -61,7 +61,13 @@
 				<label for="review">Requires Review &nbsp; </label><input name="review" id="review"  type="checkbox" {{rCheck}} />
 			</div>
 		</form>
+		{{#if modified}}
+		<button class="btn btn-success" id="save">Update</button>
+		<button class="btn btn-info" id="saveNew">Save as New Part</button>
+		{{else}}
 		<button class="btn btn-success" id="save">Save</button>
+		{{/if}}
+
 		<button class="btn btn-danger" id="delete">Delete</button>
 </div>
 </template>
