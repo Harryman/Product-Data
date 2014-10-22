@@ -21,11 +21,17 @@
 		<th>tags</th>
 	  {{#each prodEntry}}
   		<tr id="{{needsLookingAtClass}}">
-			<td class="link"><a href="{{pathFor 'product' params=this}}"><div class="qs">{{name}}</div></a></td>
-			<td>
-				<a href="/op/{{oldPart}}">
-					<div class=tag>{{oldPart}}</div>
+			<td class="link"><a href="{{pathFor 'product' params=this}}">
+				<div class="qs">{{name}}</div>
 				</a>
+			</td>
+			<td>
+				{{#each oldPart}}
+				<a href="/op/{{this}}">
+					<div class="tag">
+					{{this}}</div>
+				</a>
+				{{/each}}
 			</td>
 				<td>
 					{{#each tags}}

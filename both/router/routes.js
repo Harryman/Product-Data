@@ -21,5 +21,13 @@ Router.plugin('authd',{
 */
 Router.route('/s/:search', {name: 'search'});
 Router.route('/notAuthorized', {name: 'no.auth'});
-Router.route('/:_id', {name: 'product'});
+Router.route('/t/:tag', {
+	name: 'tag',
+	template: 'Index'
+});
+Router.route('/op/:oldPart', {
+	name: 'old.part',
+	template: 'Index'
+});
 Router.route('/', {name: 'index'});
+Router.route('/:_id', {name: 'product'});

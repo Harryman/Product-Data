@@ -121,7 +121,7 @@ Template.Product.events({
         manPn.push($.trim(this));
       }
     });
-    Product.insert({        
+    Product.insert({
       pn:pn,
       name:name,
       oldPart:oldPart,
