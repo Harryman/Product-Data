@@ -1,6 +1,6 @@
 OldPartController = RouteController.extend({
   waitOn: function () {
-  	return Meteor.subscribe('index',{oldPart:this.params.oldPart})
+  	return Meteor.subscribe('index',{oldPart:{$regex:this.params.oldPart,$options:'i'}})
   },
 
   data: function () {
