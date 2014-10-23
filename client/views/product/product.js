@@ -186,10 +186,25 @@ Template.Product.helpers({
     }
     return this.pn;
   },*/
-  chkd: function (blah){
-    if(this[blah])
+  aCheck:function(){
+  if(this.isAssembly){
       return 'checked';
+    }
+  },
+  chkd: function (blah){
+    if(this.needsReview)
+      var res = this.needsReview.some(function(ret){
+        if(ret+'nr' == blah){
+          return 'checked';
+        }
+      });
+      if(res){
+        return 'checked'
+      }
   }
+  /*reviewStyle: function (div){
+    if(this[div])
+  }*/
 });
 
 /*****************************************************************************/
