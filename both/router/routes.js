@@ -19,7 +19,10 @@ Router.plugin('authd',{
  *  Example:
  *  Router.route('/', {name: 'home'});
 */
-Router.route('/s/:search', {name: 'search'});
+Router.route('/s/:search', {
+	name: 'search',
+	template: 'Index'
+});
 Router.route('/notAuthorized', {name: 'no.auth'});
 Router.route('/t/:tag', {
 	name: 'tag',
