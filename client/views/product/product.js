@@ -26,7 +26,6 @@ Template.Product.events({
     var weight = $(tmpl.find('#weight')).val();
     var inventory = $(tmpl.find('#inventory')).val();
     var isAssembly = $(tmpl.find('#isAssembly')).is(':checked');
-    var isKit = $(tmpl.find('#isKit')).is(':checked');
     var needsReview = $(tmpl.find('#review')).is(':checked');
     var modified = new Date;
     $.each(oldPartString.split(","), function(){
@@ -64,7 +63,6 @@ Template.Product.events({
         weight:weight,
         inventory:inventory,
         isAssembly:isAssembly,
-        isKit:isKit,
         needsReview:needsReview,
         modified:modified
       },
@@ -103,7 +101,6 @@ Template.Product.events({
     var weight = $(tmpl.find('#weight')).val();
     var inventory = $(tmpl.find('#inventory')).val();
     var isAssembly = $(tmpl.find('#isAssembly')).is(':checked');
-    var isKit = $(tmpl.find('#isKit')).is(':checked');
     var needsReview = $(tmpl.find('#review')).is(':checked');
     var modified = new Date;
     $.each(oldPartString.split(","), function(){
@@ -140,7 +137,6 @@ Template.Product.events({
       weight:weight,
       inventory:inventory,
       isAssembly:isAssembly,
-      isKit:isKit,
       needsReview:needsReview,
       modified:modified,
       changeLog:{
@@ -160,6 +156,7 @@ Template.Product.helpers({
     }
     return this.pn;
   },*/
+
     rCheck :function(){
     if(this.needsReview){
       return 'checked';
@@ -167,11 +164,6 @@ Template.Product.helpers({
   },
   aCheck:function(){
   if(this.isAssembly){
-      return 'checked';
-    }
-  },
-  kCheck:function(){
-    if(this.isKit){
       return 'checked';
     }
   }

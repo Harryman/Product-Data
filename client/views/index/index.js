@@ -14,8 +14,11 @@ Template.Index.helpers({
   prodEntry: function (){
     return Product.find({},{sort:{modified:-1}});
   },
-  prodCount: function (){
-    return Product.find().count();
+  prodCount: function(){
+    return Session.get('postCount');
+  },
+  reviewCount: function(){
+    return Session.get('reviewCount')
   }
 });
 
@@ -23,6 +26,12 @@ Template.Index.helpers({
 /* Index: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Index.created = function () {
+  Meteor.call("getProdCount",function(err,result){
+    Session.set('postCount', result)
+    });
+  Meteor.call("getReviewCount", function(err,result){
+    Session.set('reviewCount', result);
+  })
 };
 
 Template.Index.rendered = function () {
