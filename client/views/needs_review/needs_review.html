@@ -1,3 +1,30 @@
 <template name="NeedsReview">
-  client/views/needs_review/needs_review.html
+<table class="table">
+	<th>Product Name</th>
+	<th>Product Name</th>
+	<th>Old Part #</th>
+	<th>Pub Desc.</th>
+	<th>Int. Desc.</th>
+	<th>Man. PN</th>
+	<th>Order Notes</th>
+	<th>Price</th>
+	<th>Cost</th>
+	<th>Hndl chrg</th>
+	<th>tags</th>
+  {{#each ent}}
+  <tr>
+  	<td>  <a href="/{{this}}">{{name}}</a></td>
+  		<td><div class="{{chkd "name"}}">&nbsp;</div></td>
+  		<td><div class="{{chkd "oldPart"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "pubDesc"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "internalDesc"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "manPn"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "orderingNotes"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "price"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "cost"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "handling"}}">&nbsp;</div></td>
+  	<td>	<div class="{{chkd "tags"}}">&nbsp;</div></td>
+  	</tr>
+  	{{/each}}
+  	</table>
 </template>

@@ -11,12 +11,20 @@ Template.NeedsReview.events({
 });
 
 Template.NeedsReview.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  ent: function (){
+   return Product.find();
+  },
+    chkd: function (blah){
+    if(this.needsReview)
+      var res = this.needsReview.some(function(ret){
+        if(ret == blah){
+          return 'checked';
+        }
+      });
+      if(res){
+        return 'checked'
+      }
+  }
 });
 
 /*****************************************************************************/

@@ -1,7 +1,7 @@
 /*****************************************************************************/
-/* Global CSS Styles */
+/* ReviewMap Publish Functions
 /*****************************************************************************/
 
-.checked{
-	background-color: #E2BFBF;
-}
+Meteor.publish('review_map', function () {
+	return Product.find({needsReview:{$ne:[]}},{fields:{name:1,needsReview:1}});
+});

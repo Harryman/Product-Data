@@ -29,6 +29,6 @@ Router.route('/op/:oldPart', {
 	name: 'old.part',
 	template: 'Index'
 });
+Router.route('/reviewNeeded', {name: 'needs.review'});
 Router.route('/', {name: 'index'});
 Router.route('/:_id', {name: 'product'});
-Router.route('/reviewNeeded', {name: 'needs.review'});
