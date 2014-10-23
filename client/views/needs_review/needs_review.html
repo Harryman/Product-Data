@@ -13,17 +13,43 @@
 	<th>tags</th>
   {{#each ent}}
   <tr>
-  	<td>  <a href="/{{this}}">{{name}}</a></td>
-  		<td><div class="{{chkd "name"}}">&nbsp;</div></td>
-  		<td><div class="{{chkd "oldPart"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "pubDesc"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "internalDesc"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "manPn"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "orderingNotes"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "price"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "cost"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "handling"}}">&nbsp;</div></td>
-  	<td>	<div class="{{chkd "tags"}}">&nbsp;</div></td>
+  	<td>  <a href="/{{_id}}">{{name}}</a></td>
+  		<td>
+  			<a href="/{{_id}}#name">
+  				<div class="{{chkd "name"}}">
+  					&nbsp;
+					</div>
+				</a>
+			</td>
+  		<td>
+  		<a href="/{{_id}}#oldPart">
+  		<div class="{{chkd "oldPart"}}">
+  			&nbsp;</div></a></td>
+  		<td>
+  		<a href="/{{_id}}#pubDesc">
+  			<div class="{{chkd "pubDesc"}}">&nbsp;
+  			</div></a></td>
+  	<td>
+  	<a href="/{{_id}}#internalDesc">
+  		<div class="{{chkd "internalDesc"}}">&nbsp;</div></a></td>
+  	<td>
+  	<a href="/{{_id}}#manPn">
+  		<div class="{{chkd "manPn"}}">&nbsp;</div></a></td>
+  	<td>
+  	<a href="/{{_id}}#orderingNotes">
+  		<div class="{{chkd "orderingNotes"}}">&nbsp;</div></a></td>
+  	<td>
+  	<a href="/{{_id}}#price">
+  		<div class="{{chkd "price"}}">&nbsp;</div></a></td>
+  	<td>
+  	<a href="/{{_id}}#cost">
+  		<div class="{{chkd "cost"}}">&nbsp;</div></a></td>
+  	<td>
+  	<a href="/{{_id}}#handling">
+  		<div class="{{chkd "handling"}}">&nbsp;</div></a></td>
+
+  	<td><a href="/{{_id}}#tags">
+  		<div class="{{chkd "tags"}}">&nbsp;</div></a></td>
   	</tr>
   	{{/each}}
   	</table>
