@@ -31,3 +31,4 @@ Router.route('/op/:oldPart', {
 });
 Router.route('/', {name: 'index'});
 Router.route('/:_id', {name: 'product'});
+Router.route('/reviewNeeded', {name: 'needs.review'});

@@ -4,29 +4,44 @@
 Template.Product.events({
   'click #save':function(e,tmpl){
     e.preventDefault();
+    var needsReview = [];
+    reviewTick = function (pnt){
+      if($(tmpl.find('#'+pnt+'nr')).is(':checked')){
+        needsReview.push(pnt);
+      }
+    }
     var prodData = tmpl.data;
     var pn = $(tmpl.find('#pn')).val();
     var name = $(tmpl.find('#name')).val();
+    reviewTick('name');
     var oldPartString = $(tmpl.find('#oldPart')).val();
     var oldPart = [];
+    reviewTick('oldPart')
     var pubDesc = $(tmpl.find('#pubDesc')).val();
+    reviewTick('pubDesc');
     var internalDesc = $(tmpl.find('#internalDesc')).val();
+    reviewTick('internalDesc');
     var manPnString = $(tmpl.find('#manPn')).val();
+    reviewTick('manPn');
     var manPn = [];
     var orderingNotes = $(tmpl.find('#orderingNotes')).val();
+    reviewTick('orderingNotes');
     var notes = $(tmpl.find('#notes')).val();
     var tagString = $(tmpl.find('#tags')).val();
+    reviewTick('tags');
     var tags = [];
     var price = $(tmpl.find('#price')).val();
+    reviewTick('price');
     var cost = $(tmpl.find('#cost')).val();
+    reviewTick('cost');
     var handling = $(tmpl.find('#handling')).val();
+    reviewTick('handling');
     var length = $(tmpl.find('#length')).val();
     var width = $(tmpl.find('#width')).val();
     var height = $(tmpl.find('#height')).val();
     var weight = $(tmpl.find('#weight')).val();
     var inventory = $(tmpl.find('#inventory')).val();
     var isAssembly = $(tmpl.find('#isAssembly')).is(':checked');
-    var needsReview = $(tmpl.find('#review')).is(':checked');
     var modified = new Date;
     $.each(oldPartString.split(","), function(){
       if(this != ""){
@@ -79,29 +94,44 @@ Template.Product.events({
   },
   'click #saveNew': function(e,tmpl){
     e.preventDefault();
+    var needsReview = [];
+    reviewTick = function (pnt){
+      if($(tmpl.find('#'+pnt+'nr')).is('checked')){
+        needsReview.push(pnt);
+      }
+    }
     var prodData = tmpl.data;
     var pn = $(tmpl.find('#pn')).val();
     var name = $(tmpl.find('#name')).val();
+    reviewTick('name');
     var oldPartString = $(tmpl.find('#oldPart')).val();
     var oldPart = [];
+    reviewTick('oldPart')
     var pubDesc = $(tmpl.find('#pubDesc')).val();
+    reviewTick('pubDesc');
     var internalDesc = $(tmpl.find('#internalDesc')).val();
+    reviewTick('internalDesc');
     var manPnString = $(tmpl.find('#manPn')).val();
+    reviewTick('manPn');
     var manPn = [];
     var orderingNotes = $(tmpl.find('#orderingNotes')).val();
+    reviewTick('orderingNotes');
     var notes = $(tmpl.find('#notes')).val();
     var tagString = $(tmpl.find('#tags')).val();
+    reviewTick('tags');
     var tags = [];
     var price = $(tmpl.find('#price')).val();
+    reviewTick('price');
     var cost = $(tmpl.find('#cost')).val();
+    reviewTick('cost');
     var handling = $(tmpl.find('#handling')).val();
+    reviewTick('handling');
     var length = $(tmpl.find('#length')).val();
     var width = $(tmpl.find('#width')).val();
     var height = $(tmpl.find('#height')).val();
     var weight = $(tmpl.find('#weight')).val();
     var inventory = $(tmpl.find('#inventory')).val();
     var isAssembly = $(tmpl.find('#isAssembly')).is(':checked');
-    var needsReview = $(tmpl.find('#review')).is(':checked');
     var modified = new Date;
     $.each(oldPartString.split(","), function(){
       if(this != ""){
@@ -156,16 +186,9 @@ Template.Product.helpers({
     }
     return this.pn;
   },*/
-
-    rCheck :function(){
-    if(this.needsReview){
+  chkd: function (blah){
+    if(this[blah])
       return 'checked';
-    }
-  },
-  aCheck:function(){
-  if(this.isAssembly){
-      return 'checked';
-    }
   }
 });
 

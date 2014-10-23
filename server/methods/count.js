@@ -7,6 +7,6 @@ Meteor.methods({
 		return Product.find().count();
 	},
 	getReviewCount: function (){
-		return Product.find({$or:[{needsReview:""},{needsReview:{$exists:false}}]}).count();
+		return Product.find({$nor:[{needsReview:""},{needsReview:[]}]}).count();
 	}
 });

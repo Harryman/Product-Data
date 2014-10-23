@@ -3,34 +3,35 @@
 		<form action="" role="form">
 			<label for="Part Number">Part #:<input type="text" name="pn" id="pn" disabled value="{{partNum}}"></label>
 			<div class="form-group">
-				<label for="name">Product Name</label><input type="text" id="name" value="{{name}}" placeholder="Be descriptive" class="form-control">
+				<label for="name">Product Name</label><input type="text" id="name" value="{{name}}" placeholder="Be descriptive" class="form-control"><input id="namenr"  type="checkbox" {{chkd "namenr"}} />
 			</div>
 			<div class="form-group">
-				<label for="oldPart">Old Part Numbers(comma separated)</label><input type="text" value="{{oldPart}}" placeholder="Old part numbers this part is or is a part of" id="oldPart" class="form-control">
+				<label for="oldPart">Old Part Numbers(comma separated)</label><input type="text" value="{{oldPart}}" placeholder="Old part numbers this part is or is a part of" id="oldPart" class="form-control"><input id="oldPartnr"  type="checkbox" {{chkd "oldPartnr"}} />
 			</div>
 			<div class="form-group">
-				<label for="pubDesc">Public Product Description</label><textarea name="pubDesc" placeholder="if the title is not descriptive enought or there is more info" id="pubDesc" cols="125" rows="10">{{pubDesc}}</textarea>
+				<label for="pubDesc">Public Product Description</label><textarea name="pubDesc" placeholder="if the title is not descriptive enought or there is more info" id="pubDesc" cols="125" rows="10">{{pubDesc}}</textarea><input id="pubDescnr"  type="checkbox" {{chkd "pubDescnr"}} />
 			</div>
 			<div class="form-group">
-				<label for="interanlDesc">Internal Description(if different than puiblic)</label><textarea name="internalDesc" id="internalDesc" cols="125" rows="10">{{internalDesc}}</textarea>
+				<label for="interanlDesc">Internal Description(if different than puiblic)</label><textarea name="internalDesc" id="internalDesc" cols="125" rows="10">{{internalDesc}}</textarea><input id="internalDescnr"  type="checkbox" {{chkd "internalDescnr"}} />
 			</div>
 			<div class="form-group">
 				<label for="manP">Manufacturer/distributor partnumber(comma separated if mulitple)</label><input type="text" value="{{manPn}}" placeholder="any numbers on the box" id="manPn" class="form-control">
+				<input id="manPnnr"  type="checkbox" {{chkd "manPnnr"}} />
 			</div>
 			<div class="form-group">
 				<label for="orderingNotes">Notes for orderering product from suppliers</label><textarea name="orderingNotes" placeholder="where do we purchase this from, or any other ordering information" id="orderingNotes" cols="125" rows="10">{{orderingNotes}}</textarea>
-			</div>
+			</div><input id="orderingNotesnr"  type="checkbox" {{chkd "orderingNotesnr"}} />
 			<div class="form-group">
 				<label for="notes">Notes &nbsp;</label><textarea name="notes" placeholder="General notes, anything relating to this part." id="notes" cols="125" rows="10">{{notes}}</textarea>
 			</div>
 			<div class="form-group">
-				<label for="price">Price</label><input type="text" value="{{price}}" placeholder="If this exact entry has a matching QB part number enter QB price" id="price" class="form-control">
+				<label for="price">Price</label><input type="text" value="{{price}}" placeholder="If this exact entry has a matching QB part number enter QB price" id="price" class="form-control"><input id="pricenr"  type="checkbox" {{chkd "pricenr"}} />
 			</div>
 			<div class="form-group">
-				<label for="cost">Cost</label><input type="text" value="{{cost}}" id="cost" class="form-control">
+				<label for="cost">Cost</label><input type="text" value="{{cost}}" id="cost" class="form-control"><input id="costnr"  type="checkbox" {{chkd "costnr"}} />
 			</div>
 			<div class="form-group">
-				<label for="handling">Additional handling charges</label><input type="text" value="{{handling}}" id="handling" class="form-control">
+				<label for="handling">Additional handling charges</label><input type="text" value="{{handling}}" id="handling" class="form-control"><input id="handlingnr"  type="checkbox" {{chkd "handilingnr"}} />
 			</div>
 			<div class="form-group">
 				<label for="length">length</label><input type="text" value="{{length}}" id="length" class="form-control">
@@ -45,17 +46,14 @@
 				<label for="weight">weight</label><input type="text" value="{{weight}}" placeholder="1.380" cd id="weight" class="form-control">
 			</div>
 			<div class="form-group">
-				<label for="tags">Tags(seperate with comma)</label><input type="text" id="tags" value="{{tags}}" class="form-control">
+				<label for="tags">Tags(seperate with comma)</label><input type="text" id="tags" value="{{tags}}" class="form-control"><input id="tagsnr"  type="checkbox" {{chkd "tagsnr"}} />
 			</div>
 
 			<div class="form-group">
 				<label for="inventory">Number in inventory</label><input type="text" value="{{inventory}}" id="inventory" class="form-control">
 			</div>
 			<div class="form-group">
-				<label for="isAssembly">This product is an assembly &nbsp; </label><input name="isAssembly" id="isAssembly"  type="checkbox" {{aCheck}} />
-			</div>
-			<div class="form-group">
-				<label for="review">Requires Review &nbsp; </label><input name="review" id="review"  type="checkbox" {{rCheck}} />
+				<label for="isAssembly">This product is an assembly &nbsp; </label><input name="isAssembly" id="isAssembly"  type="checkbox" {{chkd "isAssembly"}} />
 			</div>
 		</form>
 		{{#if modified}}
