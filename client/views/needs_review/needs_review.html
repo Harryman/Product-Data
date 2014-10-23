@@ -10,6 +10,7 @@
 	<th>Price</th>
 	<th>Cost</th>
 	<th>Hndl chrg</th>
+	<th>Rel. Tags</th>
 	<th>tags</th>
   {{#each ent}}
   <tr>
@@ -47,7 +48,8 @@
   	<td>
   	<a href="/{{_id}}#handling">
   		<div class="{{chkd "handling"}}">&nbsp;</div></a></td>
-
+	  	<td><a href="/{{_id}}#relatedTags">
+  		<div class="{{chkd "relatedTags"}}">&nbsp;</div></a></td>
   	<td><a href="/{{_id}}#tags">
   		<div class="{{chkd "tags"}}">&nbsp;</div></a></td>
   	</tr>

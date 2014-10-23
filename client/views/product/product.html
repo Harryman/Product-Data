@@ -45,8 +45,11 @@
 			<div class="form-group">
 				<label for="weight">weight</label><input type="text" value="{{weight}}" placeholder="1.380" cd id="weight" class="form-control">
 			</div>
+			<div class="form-group {{chkd "relatedTagsnr"}}">
+				<label for="relatedTags">Related Tags(seperate with comma)</label><input type="text" id="relatedTags" value="{{relatedTags}}" class="form-control"><input id="relatedTagsnr"  type="checkbox" placeholder="Tags this part could be a part of." {{chkd "relatedTagsnr"}} />
+			</div>
 			<div class="form-group {{chkd "tagsnr"}}">
-				<label for="tags">Tags(seperate with comma)</label><input type="text" id="tags" value="{{tags}}" class="form-control"><input id="tagsnr"  type="checkbox" {{chkd "tagsnr"}} />
+				<label for="tags">Tags(seperate with comma)</label><input type="text" id="tags" value="{{tags}}" class="form-control"><input id="tagsnr"  type="checkbox" placeholder="Tags that of attributes this part has." {{chkd "tagsnr"}} />
 			</div>
 
 			<div class="form-group">

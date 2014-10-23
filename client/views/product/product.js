@@ -27,9 +27,12 @@ Template.Product.events({
     var orderingNotes = $(tmpl.find('#orderingNotes')).val();
     reviewTick('orderingNotes');
     var notes = $(tmpl.find('#notes')).val();
+    var relatedTagString = $(tmpl.find('#relatedTags')).val();
+    var relatedTags = [];
+    reviewTick('relatedTags');
     var tagString = $(tmpl.find('#tags')).val();
-    reviewTick('tags');
     var tags = [];
+    reviewTick('tags');
     var price = $(tmpl.find('#price')).val();
     reviewTick('price');
     var cost = $(tmpl.find('#cost')).val();
@@ -46,6 +49,11 @@ Template.Product.events({
     $.each(oldPartString.split(","), function(){
       if(this != ""){
         oldPart.push($.trim(this));
+      }
+    });
+    $.each(relatedTagString.split(","), function(){
+      if(this != ""){
+        relatedTags.push($.trim(this));
       }
     });
     $.each(tagString.split(","), function(){
@@ -68,6 +76,7 @@ Template.Product.events({
         manPn:manPn,
         orderingNotes:orderingNotes,
         notes:notes,
+        relatedTags:relatedTags,
         tags:tags,
         price:price,
         cost:cost,
@@ -117,6 +126,9 @@ Template.Product.events({
     var orderingNotes = $(tmpl.find('#orderingNotes')).val();
     reviewTick('orderingNotes');
     var notes = $(tmpl.find('#notes')).val();
+    var relatedTagString = $(tmpl.find('#relatedTags')).val();
+    var relatedTags = [];
+    reviewTick('relatedTags');
     var tagString = $(tmpl.find('#tags')).val();
     reviewTick('tags');
     var tags = [];
@@ -136,6 +148,11 @@ Template.Product.events({
     $.each(oldPartString.split(","), function(){
       if(this != ""){
         oldPart.push($.trim(this));
+      }
+    });
+    $.each(relatedTagString.split(","), function(){
+      if(this != ""){
+        relatedTags.push($.trim(this));
       }
     });
     $.each(tagString.split(","), function(){
@@ -158,6 +175,7 @@ Template.Product.events({
       orderingNotes:orderingNotes,
       notes:notes,
       tags:tags,
+      relatedTags:relatedTags,
       price:price,
       cost:cost,
       handling:handling,
