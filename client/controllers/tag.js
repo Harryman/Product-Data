@@ -1,6 +1,6 @@
 TagController = RouteController.extend({
   waitOn: function () {
-  	return Meteor.subscribe('index',{tags:this.params.tag})
+  	return Meteor.subscribe('index',{relatedTags:this.params.tag})
   },
 
   data: function () {

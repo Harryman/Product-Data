@@ -3,14 +3,15 @@
 	<th>Product Name</th>
 	<th>Product Name</th>
 	<th>Old Part #</th>
-	<th>Pub Desc.</th>
+  <th>Pub Desc.</th>
+  <th>Variations</th>
 	<th>Int. Desc.</th>
 	<th>Man. PN</th>
 	<th>Order Notes</th>
 	<th>Price</th>
 	<th>Cost</th>
 	<th>Hndl chrg</th>
-	<th>Rel. Tags</th>
+	<th>Adj. Tags</th>
 	<th>tags</th>
   {{#each ent}}
   <tr>
@@ -30,6 +31,10 @@
   		<a href="/{{_id}}#pubDesc">
   			<div class="{{chkd "pubDesc"}}">&nbsp;
   			</div></a></td>
+      <td>
+      <a href="/{{_id}}#variations">
+        <div class="{{chkd "variations"}}">&nbsp;
+        </div></a></td>
   	<td>
   	<a href="/{{_id}}#internalDesc">
   		<div class="{{chkd "internalDesc"}}">&nbsp;</div></a></td>

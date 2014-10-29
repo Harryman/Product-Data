@@ -19,6 +19,9 @@ Template.Product.events({
     reviewTick('oldPart')
     var pubDesc = $(tmpl.find('#pubDesc')).val();
     reviewTick('pubDesc');
+    var variationString = $(tmpl.find('#variations')).val();
+    reviewTick('variations');
+    var variations = [];
     var internalDesc = $(tmpl.find('#internalDesc')).val();
     reviewTick('internalDesc');
     var manPnString = $(tmpl.find('#manPn')).val();
@@ -51,6 +54,11 @@ Template.Product.events({
         oldPart.push($.trim(this));
       }
     });
+    $.each(variationString.split(","), function(){
+      if(this != ""){
+        variations.push($.trim(this));
+      }
+    });
     $.each(relatedTagString.split(","), function(){
       if(this != ""){
         relatedTags.push($.trim(this));
@@ -72,6 +80,7 @@ Template.Product.events({
         name:name,
         oldPart:oldPart,
         pubDesc:pubDesc,
+        variations:variations,
         internalDesc:internalDesc,
         manPn:manPn,
         orderingNotes:orderingNotes,
@@ -118,6 +127,9 @@ Template.Product.events({
     reviewTick('oldPart')
     var pubDesc = $(tmpl.find('#pubDesc')).val();
     reviewTick('pubDesc');
+    var variationString = $(tmpl.find('#variations')).val();
+    reviewTick('variations');
+    var variations = [];
     var internalDesc = $(tmpl.find('#internalDesc')).val();
     reviewTick('internalDesc');
     var manPnString = $(tmpl.find('#manPn')).val();
@@ -150,6 +162,11 @@ Template.Product.events({
         oldPart.push($.trim(this));
       }
     });
+    $.each(variationString.split(","), function(){
+      if(this != ""){
+        variations.push($.trim(this));
+      }
+    });
     $.each(relatedTagString.split(","), function(){
       if(this != ""){
         relatedTags.push($.trim(this));
@@ -170,6 +187,7 @@ Template.Product.events({
       name:name,
       oldPart:oldPart,
       pubDesc:pubDesc,
+      variations:variations,
       internalDesc:internalDesc,
       manPn:manPn,
       orderingNotes:orderingNotes,

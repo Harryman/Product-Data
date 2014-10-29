@@ -18,7 +18,7 @@
 	<table class="table">
 		<th>Product Name</th>
 		<th>Old P#</th>
-		<th>tags</th>
+		<th>Adjective Tags</th>
 	  {{#each prodEntry}}
   		<tr>
 			<td class="link"><a href="{{pathFor 'product' params=this}}">
@@ -34,7 +34,7 @@
 				{{/each}}
 			</td>
 				<td>
-					{{#each tags}}
+					{{#each relatedTags}}
 					<a href="/t/{{this}}">
 						<div class="tag">
 							{{this}}

@@ -11,6 +11,9 @@
 			<div class="form-group {{chkd "pubDescnr"}}">
 				<label for="pubDesc">Public Product Description</label><textarea name="pubDesc" placeholder="if the title is not descriptive enought or there is more info" id="pubDesc" cols="125" rows="10">{{pubDesc}}</textarea><input id="pubDescnr"  type="checkbox" {{chkd "pubDescnr"}} />
 			</div>
+			<div class="form-group {{chkd "variationsnr"}}">
+				<label for="variations">Variations, list if this part has different sizes, colors, etc...(Seperate with comma)</label><input type="text" id="variations" value="{{variations}}" class="form-control"><input id="variationsnr"  type="checkbox" placeholder="black, blue, large, small, 1, 1.25, 1.5" {{chkd "variationsnr"}} />
+			</div>
 			<div class="form-group {{chkd "internalDescnr"}}">
 				<label for="interanlDesc">Internal Description(if different than puiblic)</label><textarea name="internalDesc" id="internalDesc" cols="125" rows="10">{{internalDesc}}</textarea><input id="internalDescnr"  type="checkbox" {{chkd "internalDescnr"}} />
 			</div>
@@ -46,10 +49,10 @@
 				<label for="weight">weight</label><input type="text" value="{{weight}}" placeholder="1.380" cd id="weight" class="form-control">
 			</div>
 			<div class="form-group {{chkd "relatedTagsnr"}}">
-				<label for="relatedTags">Related Tags(seperate with comma)</label><input type="text" id="relatedTags" value="{{relatedTags}}" class="form-control"><input id="relatedTagsnr"  type="checkbox" placeholder="Tags this part could be a part of." {{chkd "relatedTagsnr"}} />
+				<label for="relatedTags">Adjective Tags(Use comma to separate tags)</label><input type="text" id="relatedTags" placeholder="Tags that describe the tag, i.e. V-twin, transmission, intake" value="{{relatedTags}}" class="form-control"><input id="relatedTagsnr"  type="checkbox"  {{chkd "relatedTagsnr"}} />
 			</div>
 			<div class="form-group {{chkd "tagsnr"}}">
-				<label for="tags">Tags(seperate with comma)</label><input type="text" id="tags" value="{{tags}}" class="form-control"><input id="tagsnr"  type="checkbox" placeholder="Tags that of attributes this part has." {{chkd "tagsnr"}} />
+				<label for="tags">Noun Tags(seperate with comma)</label><input type="text" id="tags" placeholder="What type of part is this, i.e. cam, tire, manifold" value="{{tags}}" class="form-control"><input id="tagsnr"  type="checkbox" {{chkd "tagsnr"}} />
 			</div>
 
 			<div class="form-group">
