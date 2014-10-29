@@ -20,8 +20,7 @@ Router.plugin('authd',{
  *  Router.route('/', {name: 'home'});
 */
 Router.route('/s/:search', {
-	name: 'search',
-	template: 'Index'
+	name: 'search'
 });
 Router.route('/notAuthorized', {name: 'no.auth'});
 Router.route('/t/:tag', {

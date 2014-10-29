@@ -1,3 +1,49 @@
 <template name="Search">
-  client/views/search/search.html
+<div class="panel panel-default">
+	<div class="panel-heading">
+	<ul class="nav nav-pills">
+	<li>
+		<a href="{{pathFor 'index'}}">
+			<h3>Products:{{prodCount}}
+			</h3>
+		</a>
+	</li>
+	<li>
+		<a href="{{pathFor 'needs.review'}}">
+			<h3>Review needed:{{reviewCount}}</h3>
+		</a>
+		</li>
+		</ul>
+		</div>
+	<table class="table">
+		<th>Product Name</th>
+		<th>Old P#</th>
+		<th>tags</th>
+	  {{#each prodEntry}}
+  		<tr>
+			<td class="link"><a href="{{pathFor 'product' params=this}}">
+				<div class="qs">{{name}}</div>
+				</a>
+			</td>
+			<td>
+				{{#each oldPart}}
+				<a href="/op/{{this}}">
+					<div class="tag">
+					{{this}}</div>
+				</a>
+				{{/each}}
+			</td>
+				<td>
+					{{#each tags}}
+					<a href="/t/{{this}}">
+						<div class="tag">
+							{{this}}
+						</div>
+					</a>
+					{{/each}}
+				</td>
+			</tr>
+	  {{/each}}
+	  </table>
+</div>
 </template>
