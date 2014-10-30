@@ -12,7 +12,7 @@
 				<label for="pubDesc">Public Product Description</label><textarea name="pubDesc" placeholder="if the title is not descriptive enought or there is more info" id="pubDesc" cols="125" rows="10">{{pubDesc}}</textarea><input id="pubDescnr"  type="checkbox" {{chkd "pubDescnr"}} />
 			</div>
 			<div class="form-group {{chkd "variationsnr"}}">
-				<label for="variations">Variations, list if this part has different sizes, colors, etc...(Seperate with comma)</label><input type="text" id="variations" value="{{variations}}" class="form-control"><input id="variationsnr"  type="checkbox" placeholder="black, blue, large, small, 1, 1.25, 1.5" {{chkd "variationsnr"}} />
+				<label for="variations">Variations, list if this part has different sizes, colors, etc...(Seperate with comma)</label><input type="text" id="variations" placeholder="black, blue, large, small, 1, 1.25, 1.5" value="{{variations}}" class="form-control"><input id="variationsnr"  type="checkbox" {{chkd "variationsnr"}} />
 			</div>
 			<div class="form-group {{chkd "internalDescnr"}}">
 				<label for="interanlDesc">Internal Description(if different than puiblic)</label><textarea name="internalDesc" id="internalDesc" cols="125" rows="10">{{internalDesc}}</textarea><input id="internalDescnr"  type="checkbox" {{chkd "internalDescnr"}} />
